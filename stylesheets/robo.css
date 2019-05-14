@@ -36,6 +36,37 @@ body {
     color: #1F497D;
 }
 
+.action-btn {
+    background: #1F497D;
+    border: 2px solid #1F497D;
+    box-sizing: border-box;
+    text-align: center;
+    padding: 5px 10px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.action-btn:hover {
+    background: #fff;
+    border: 2px solid #1F497D;
+    color: #1F497D;
+}
+
+.red-btn {
+    background: #df0700;
+    border: 2px solid #df0700;
+    color: #fff;
+    text-align: center;
+    padding: 5px 10px;
+    font-weight: bold;
+}
+
+.red-btn:hover {
+    background: #fff;
+    border: 2px solid #df0700;
+    color: #df0700;
+}
+
 .remember {
     color: #666666;
 }
@@ -84,4 +115,14 @@ body {
 
 .login-box>label {
     width: 100%;
+}
+
+.button-list {
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.button-list>button {
+    width: 120px;
 }
