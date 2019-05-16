@@ -16,73 +16,76 @@
     <link rel="manifest" href="https://www.prefeitura.sp.gov.br/cidade/manifest.json" />
     <link rel="shortcut icon" type="image/x-icon" href="https://www.prefeitura.sp.gov.br/cidade/img/favicon.ico" />
     <link rel="apple-touch-icon" href="https://www.prefeitura.sp.gov.br/cidade/img/favicon.gif" />
-    <link rel="stylesheet" href="https://www.prefeitura.sp.gov.br/cidade/css/main.19.4.29.193724-min.css">
+    <!-- <link rel="stylesheet" href="https://www.prefeitura.sp.gov.br/cidade/css/main.19.4.29.193724-min.css"> -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="stylesheets/robo.css">
     <!--[if lt IE 9]><script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script> <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
 </head>
 
 <body>
-    <!-- CONFERIR ACESSIBILIDADE ABAIXO -->
-    <nav id="accessibility" class="sr-only">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <ul class="list-inline nav-accessibility">
-                        <li> <a href="#login" accesskey="1">Ir para o acesso ao robô</a> <span class="label label-primary">1</span> </li>
-                        <li> <a href="#footer" accesskey="4">Ir para o rodap&eacute;</a> <span class="label label-primary">2</span> </li>
-                    </ul>
+    <header class="header">
+        <nav id="accessibility">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <ul class="list-inline nav-accessibility">
+                            <li> <a href="#login" accesskey="1">Ir para o acesso ao robô</a> <span class="label label-primary">[1]</span> </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-        </div>
-    </nav>
-    <header class="header">
+        </nav>
         <div class="container">
             <div class="row">
-                <div class="col-md-3 col-xs-12 text-left">
+                <div class="col-md-2 col-xs-3 text-left">
                     <a class="header-logo" href="http://www.prefeitura.sp.gov.br/cidade/secretarias/pessoa_com_deficiencia/"> <img class="header-logo-smped" src="images/PESSOA COM DEFICI“NCIA_PB_NEGATIVO.png" alt="SMPED"> </a>
                 </div>
-                <div class="col-md-6 col-xs-12 text-center">
-                    <a href="/home"> Robô Verificador de Selos de Acessibilidade </a>
+                <div class="col-md-8 col-xs-6 text-center">
+                    <a class="header-title" href="home.html"> Robô Verificador de Selos de Acessibilidade </a>
                 </div>
-                <div class="col-md-3 col-xs-12 text-center">
+                <div class="col-md-2 col-xs-3 text-center">
                     <a class="header-logo" href="http://www.prefeitura.sp.gov.br/"> <img class="header-logo-prefeitura" src="images/CIDADE DE S«O PAULO_HORIZONTAL_FUNDO_ESCURO.png" alt="Prefeitura de São Paulo"> </a>
                 </div>
             </div>
         </div>
     </header>
     <div class="container fill">
-        <div class="row">
+        <div class="row justify-content-center">
             <div class="col-md-4 col-md-offset-4 login-box">
                 <div class="row login-header align-middle">
-                    <h2 class="text-center">
+                    <h1 class="text-center">
                         Entrar
-                    </h2>
+                    </h1>
                 </div>
-                <div class="row login-form">
-                    <form id="login">
-                        <div class="form-group">
-                            <label for="rf">RF do Gestor <br />
-                                <input name="rf" id="rf" class="form-control"/>
-                            </label>
-                        </div>
-                        <!-- form-group// -->
-                        <div class="form-group">
-                            <label for="senha">Senha <br />
-                                <input name="senha" id="senha" class="form-control" type="password">
-                            </label>
-                        </div>
-                        <!-- form-group// -->
-                        <div class="form-group col-md-6">
-                            <div class="checkbox">
-                                <label class="remember" for="lembrar"> <input name="lembrar" id="lembrar" type="checkbox"> Lembrar </label>
+                <div class="row">
+                    <div class="col-xs-12 login-form w-100">
+                        <form id="login">
+                            <div class="form-group">
+                                <label class="w-100" for="rf">RF do Gestor <br />
+                                    <input name="rf" id="rf" class="form-control" type="text" />
+                                </label>
                             </div>
-                            <!-- checkbox .// -->
-                        </div>
-                        <!-- form-group// -->
-                        <div class="form-group col-md-6">
-                            <input class="btn btn-primary btn-block login-btn" type="submit" value="Acessar" id="acessar" />
-                        </div>
-                        <!-- form-group// -->
+                            <!-- form-group// -->
+                            <div class="form-group">
+                                <label class="w-100" for="senha">Senha <br />
+                                    <input name="senha" id="senha" class="form-control" type="password">
+                                </label>
+                            </div>
+                            <div class="row">
+                                <!-- form-group// -->
+                                <div class="form-group col-md-6">
+                                    <div class="checkbox">
+                                        <label class="remember" for="lembrar"> <input name="lembrar" id="lembrar" type="checkbox"> Lembrar </label>
+                                    </div>
+                                    <!-- checkbox .// -->
+                                </div>
+                                <!-- form-group// -->
+                                <div class="form-group col-md-6">
+                                    <input class="btn btn-primary btn-block login-btn" type="submit" value="Acessar" id="acessar" />
+                                </div>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>

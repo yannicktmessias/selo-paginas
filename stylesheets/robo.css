@@ -4,13 +4,25 @@ body {
 }
 
 .header {
-    background: #1E1A17;
+    background-color: #1E1A17;
+    padding: 5px 15px 15px 15px;
 }
 
 .header-logo-smped,
 .header-logo-prefeitura {
     max-width: 100%;
     max-height: 100%;
+}
+
+.header-title {
+    font-weight: bold;
+    font-size: 24px;
+    color: #fff;
+}
+
+.nav-accessibility {
+    font-size: 12px;
+    color: #fff;
 }
 
 .login-box {
@@ -30,7 +42,7 @@ body {
 }
 
 .login-form {
-    padding: 15px
+    padding: 15px;
 }
 
 .login-btn {
@@ -158,4 +170,16 @@ body {
 .thead-links tr th:first-child,
 .tbody-links tr td:first-child {
     border-right: 1px solid #BBBBBB;
+}
+
+.footer-copyright {
+    background-color: #424242;
+    color: #b6b6b6;
+    line-height: 100%;
+    font-size: .75em;
+    padding: 9px 0 6px 0
+}
+
+.footer-copyright>.container>.col-md-12 {
+    padding-left: 0
 }
