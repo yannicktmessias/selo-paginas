@@ -29,7 +29,8 @@
                 <div class="row">
                     <div class="col-md-12">
                         <ul class="list-inline nav-accessibility">
-                            <li> <a href="#login" accesskey="1">Ir para o acesso ao robô</a> <span class="label">[1]</span> </li>
+                            <li> <a href="#nav" accesskey="1">Ir para o menu</a> <span class="label">[1]</span> </li>
+                            <li> <a href="#content" accesskey="1">Ir para o conteúdo</a> <span class="label">[2]</span> </li>
                         </ul>
                     </div>
                 </div>
@@ -62,7 +63,7 @@
                                     class="icon-bar"></span> <span class="icon-bar"></span> <span
                                     class="icon-bar"></span> </button>
                             <a class="navbar-brand" href="#">
-                                <h1 class="nav-title">Robô Verificador dos Selos de Acessibilidade</h1>
+                                <h1 class="nav-title">Lista de Selos Concedidos</h1>
                             </a>
                         </div>
                         <div class="collapse navbar-collapse panel-nav" id="bs-example-navbar-collapse-1">
@@ -95,18 +96,13 @@
                 </nav>
             </div>
             <div class="col-md-9 col-xs-12" id="content" tabindex="-1">
-                <div class="container">
-                    <div class="row">
-                        <h2>Lista de Selos Concedidos</h2>
-                    </div>
-                </div>
                 <div class="row">
                     <div class="col-md-6 col-xs-12">
                         <div class="form-group select-all-box">
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" id="selectAll" name="Selecione tudo">
                                 <label class="form-check-label" for="selectAll">
-                                    Selecione tudo
+                                    Selecione todos os domínios
                                 </label>
                             </div>
                         </div>
@@ -114,9 +110,9 @@
                     <div class="col-md-3 col-xs-12 actions-box">
                         <select class="form-control form-control-sm">
                             <option>Ação...</option>
-                            <option>Executar verificação</option>
-                            <option>Enviar alerta</option>
-                            <option>Exportar para PDF</option>
+                            <option>Exportar última avaliação para PDF</option>
+                            <option>Enviar alerta de nível de aderência</option>
+                            <option>Executar nova avaliação</option>
                         </select>
                     </div>
                 </div>
@@ -128,9 +124,9 @@
                                 <th style="width: 23%;">Domínio</th>
                                 <th style="width: 18%;">Requerente</th>
                                 <th style="width: 12%;">Data da concessão</th>
-                                <th style="width: 12%;">Quantidade de Links</th>
+                                <th style="width: 12%;">Links abaixo de 95%</th>
                                 <th style="width: 12%;">Links acima de 95%</th>
-                                <th>Última atualização</th>
+                                <th>Última avaliação</th>
                                 <th></th>`
                             </tr>
                         </thead>
@@ -140,7 +136,7 @@
                                 <td>institutoolgakos.org.br/</td>
                                 <td>Instituto Olga Kos - Inclusão Cultura</td>
                                 <td>11/08/2018</td>
-                                <td>25</td>
+                                <td>0</td>
                                 <td>25</td>
                                 <td>27/04/2019 19:32</td>
                                 <td><i class="fas fa-plus-square"></i></td>
