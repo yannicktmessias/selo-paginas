@@ -126,3 +126,26 @@ body {
 .button-list>button {
     width: 120px;
 }
+
+.thead-links {
+    background-color: #eee;
+}
+
+.thead-links tr {
+    height: 40px;
+}
+
+.tbody-links tr {
+    border-bottom: 1px solid #BBBBBB;
+}
+
+.thead-links tr th,
+.tbody-links tr td {
+    text-align: center;
+    vertical-align: middle;
+}
+
+.thead-links tr th:first-child,
+.tbody-links tr td:first-child {
+    border-right: 1px solid #BBBBBB;
+}
