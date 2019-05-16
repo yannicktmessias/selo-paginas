@@ -1,6 +1,7 @@
 html,
 body {
     height: 100%;
+    overflow-x: hidden;
 }
 
 .header {
@@ -29,6 +30,7 @@ body {
     border: 1px solid #CCCCCC;
     box-sizing: border-box;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    margin-top: 100px;
 }
 
 .login-header {
@@ -96,7 +98,10 @@ body {
 .fill {
     height: 100%;
     min-height: 100%;
-    margin-top: 100px;
+}
+
+.content-box {
+    margin-top: 20px;
 }
 
 .thead-selos {
@@ -115,6 +120,10 @@ body {
 .tbody-selos tr td {
     text-align: center;
     vertical-align: middle;
+}
+
+.content-title {
+    margin: 0px;
 }
 
 .form-check-label {
@@ -172,14 +181,11 @@ body {
     border-right: 1px solid #BBBBBB;
 }
 
-.footer-copyright {
-    background-color: #424242;
-    color: #b6b6b6;
-    line-height: 100%;
-    font-size: .75em;
-    padding: 9px 0 6px 0
+.w-100 {
+    width: 100%;
 }
 
-.footer-copyright>.container>.col-md-12 {
-    padding-left: 0
+#accessibility {
+    background-color: transparent;
+    margin-bottom: 10px;
 }
