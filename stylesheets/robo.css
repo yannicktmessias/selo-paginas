@@ -96,8 +96,7 @@ body {
 }
 
 .fill {
-    height: 100%;
-    min-height: 100%;
+    min-height: 100vh;
 }
 
 .content-box {
@@ -188,4 +187,13 @@ body {
 #accessibility {
     background-color: transparent;
     margin-bottom: 10px;
+}
+
+.domain-detail-link {
+    color: inherit;
+}
+
+.need-attention {
+    background-color: #df0700;
+    color: #fff;
 }
