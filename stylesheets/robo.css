@@ -299,3 +299,10 @@ body {
 .no-margin {
     margin: 0px;
 }
+
+.selos-option {
+    border-top: 1px solid #BBBBBB;
+    text-align: right;
+    margin: 5px -15px 5px -15px;
+    padding: 5px;
+}
