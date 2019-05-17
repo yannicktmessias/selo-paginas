@@ -7,6 +7,8 @@ body {
 .header {
     background-color: #1E1A17;
     padding: 5px 15px 15px 15px;
+    color: #fff;
+    font-size: 12px;
 }
 
 .header-logo-smped,
@@ -292,4 +294,8 @@ body {
 
 .items-center {
     align-items: center;
+}
+
+.no-margin {
+    margin: 0px;
 }
