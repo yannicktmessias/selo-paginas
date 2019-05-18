@@ -17,10 +17,14 @@ body {
     max-height: 100%;
 }
 
-.header-title {
+.header-title,
+.header-title:visited,
+.header-title:hover,
+.header-title:active {
     font-weight: bold;
     font-size: 24px;
     color: #fff;
+    text-decoration: none;
 }
 
 .nav-accessibility {

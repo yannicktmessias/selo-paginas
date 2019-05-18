@@ -75,7 +75,7 @@
                                     class="icon-bar"></span> <span class="icon-bar"></span> <span
                                     class="icon-bar"></span> </button>
                             <a class="navbar-brand" href="#">
-                                <h1 class="nav-title">Lista de Selos Concedidos</h1>
+                                <h1 class="nav-title">Pesquisar selo</h1>
                             </a>
                         </div>
                         <div class="collapse navbar-collapse panel-nav" id="bs-example-navbar-collapse-1">
@@ -109,73 +109,72 @@
             </div>
             <div class="col-md-9 col-xs-12" id="content" tabindex="-1">
                 <div class="row">
-                    <div class="col-md-6 col-xs-12">
-                        <div class="form-group select-all-box">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" id="selectAll" name="Selecione tudo">
-                                <label class="form-check-label" for="selectAll">
-                                    Selecione todos os domínios
+                    <div class="col-xs-8">
+                        <form role="search">
+                            <div class="input-group">
+                                <label for="header-search">
+                                    <span class="sr-only">Pesquisar selo</span>
                                 </label>
+                                <input type="text" class="form-control" placeholder="Pesquisar por..." name="search-term" id="search-term">
+                                <div class="input-group-btn">
+                                    <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i><span class="sr-only">Submit Search</span></button>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-xs-12 actions-box">
-                        <select class="form-control form-control-sm">
-                            <option>Ação...</option>
-                            <option>Exportar última avaliação para PDF</option>
-                            <option>Enviar alerta de nível de aderência</option>
-                            <option>Executar nova avaliação</option>
-                        </select>
+                        </form>
                     </div>
                 </div>
-                <div>
-                    <table class="table">
-                        <thead class="thead-selos">
-                            <tr>
-                                <th></th>
-                                <th style="width: 23%;">Domínio</th>
-                                <th style="width: 18%;">Requerente</th>
-                                <th style="width: 12%;">Data da concessão</th>
-                                <th style="width: 12%;">Links abaixo de 95%</th>
-                                <th style="width: 12%;">Links acima de 95%</th>
-                                <th>Última avaliação</th>
-                                <th></th>`
-                            </tr>
-                        </thead>
-                        <tbody class="tbody-selos">
-                            <tr>
-                                <td><input type="checkbox" name="Instituto Olga Kos" />&nbsp;</td>
-                                <td>institutoolgakos.org.br/</td>
-                                <td>Instituto Olga Kos - Inclusão Cultura</td>
-                                <td>11/08/2018</td>
-                                <td>0</td>
-                                <td>25</td>
-                                <td>27/04/2019 19:32</td>
-                                <td>
-                                    <a class="domain-detail-link" href="selo.html" aria-label="Visualizar detalhes do domínio institutoolgakos.org.br/">
-                                        <i aria-hidden="true" class="fas fa-file-alt"></i>
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr class="need-attention">
-                                <td><input type="checkbox" name="Instituto Olga Kos" />&nbsp;</td>
-                                <td>institutoolgakos.org.br/</td>
-                                <td>Instituto Olga Kos - Inclusão Cultura</td>
-                                <td>11/08/2018</td>
-                                <td>
-                                    <i aria-hidden="true" class="fas fa-exclamation-circle" title="Precisa de atenção"></i>
-                                    <span class="sr-only">Precisa de atenção</span> 1
-                                </td>
-                                <td>24</td>
-                                <td>27/04/2019 19:32</td>
-                                <td>
-                                    <a class="domain-detail-link" href="selo.html" aria-label="Visualizar detalhes do domínio institutoolgakos.org.br/">
-                                        <i aria-hidden="true" class="fas fa-file-alt"></i>
-                                    </a>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <small>Resultados da pesquisa por "instituto olga"</small>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <table class="table">
+                            <thead class="thead-selos">
+                                <tr>
+                                    <th style="width: 23%;">Domínio</th>
+                                    <th style="width: 18%;">Requerente</th>
+                                    <th style="width: 12%;">Data da concessão</th>
+                                    <th style="width: 12%;">Links abaixo de 95%</th>
+                                    <th style="width: 12%;">Links acima de 95%</th>
+                                    <th>Última avaliação</th>
+                                    <th></th>`
+                                </tr>
+                            </thead>
+                            <tbody class="tbody-selos">
+                                <tr>
+                                    <td>institutoolgakos.org.br/</td>
+                                    <td>Instituto Olga Kos - Inclusão Cultura</td>
+                                    <td>11/08/2018</td>
+                                    <td>0</td>
+                                    <td>25</td>
+                                    <td>27/04/2019 19:32</td>
+                                    <td>
+                                        <a class="domain-detail-link" href="selo.html" aria-label="Visualizar detalhes do domínio institutoolgakos.org.br/">
+                                            <i aria-hidden="true" class="fas fa-file-alt"></i>
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr class="need-attention">
+                                    <td>institutoolgakos.org.br/</td>
+                                    <td>Instituto Olga Kos - Inclusão Cultura</td>
+                                    <td>11/08/2018</td>
+                                    <td>
+                                        <i aria-hidden="true" class="fas fa-exclamation-circle" title="Precisa de atenção"></i>
+                                        <span class="sr-only">Precisa de atenção</span> 1
+                                    </td>
+                                    <td>24</td>
+                                    <td>27/04/2019 19:32</td>
+                                    <td>
+                                        <a class="domain-detail-link" href="selo.html" aria-label="Visualizar detalhes do domínio institutoolgakos.org.br/">
+                                            <i aria-hidden="true" class="fas fa-file-alt"></i>
+                                        </a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>
@@ -184,7 +183,8 @@
         <div class="footer-copyright hidden-xs ">
             <div class="container ">
                 <div class="row ">
-                    <div class="col-md-12 text-left ">&copy; COPYRIGHT 2019, Uma parceria da Universidade de São Paulo com a Prefeitura Municipal de S&atilde;o Paulo Viaduto do Cha, 15 - Centro - CEP: 01002-020</div>
+                    <div class="col-md-12 text-left ">&copy; COPYRIGHT 2019, Uma parceria da Universidade de São Paulo com a Prefeitura Municipal de S&atilde;o Paulo Viaduto do Cha, 15 - Centro - CEP: 01002-020
+                    </div>
                 </div>
             </div>
         </div>
