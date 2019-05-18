@@ -210,6 +210,11 @@ body {
     justify-content: space-between;
 }
 
+.justify-center {
+    display: flex;
+    justify-content: center;
+}
+
 .float-right {
     float: right;
 }
