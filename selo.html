@@ -103,23 +103,23 @@
             </div>
             <div class="col-md-9 col-xs-12" id="content" tabindex="-1">
                 <div class="row flex items-center">
-                    <div class="col-xs-11">
+                    <div class="col-xs-12 col-md-10">
                         <h2>Domínio: institutoolgakos.org.br/</h2>
                     </div>
-                    <div class="col-xs-1 float-right">
+                    <div class="col-xs-12 col-md-1 float-right">
                         <div class="btn-group" dropdown>
-                            <button type="button" class="btn btn-light dropdown-toggle" dropdown-toggle><span class="glyphicon glyphicon-cog"
-                                    aria-hidden="true"></span>
+                            <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
                                 <span class="caret"></span>
                                 <span class="sr-only">Ações para o domínio institutoolgakos.org.br/</span>
                             </button>
-                            <ul class="dropdown-menu" role="menu">
-                                <li><a href="#">Enviar alerta de nível de aderência</a></li>
-                                <li><a href="renew_selo.html">Renovar selo</a></li>
-                                <li><a href="#">Inativar selo</a></li>
-                                <li><a href="edit_selo.html">Editar selo</a></li>
-                                <li><a href="#">Editar requerente</a></li>
-                                <li><a href="#">Exportar relatório atual para PDF</a></li>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <li role="menuitem"><a href="#">Enviar alerta de nível de aderência</a></li>
+                                <li role="menuitem"><a href="renew_selo.html">Renovar selo</a></li>
+                                <li role="menuitem"><a href="#">Inativar selo</a></li>
+                                <li role="menuitem"><a href="edit_selo.html">Editar selo</a></li>
+                                <li role="menuitem"><a href="edit_applicant.html">Editar requerente</a></li>
+                                <li role="menuitem"><a href="#">Exportar relatório atual para PDF</a></li>
                             </ul>
                         </div>
                     </div>
@@ -356,6 +356,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js "></script>
     <script src="https://www.prefeitura.sp.gov.br/cidade/js/bootstrap-3.3.7.min.js "></script>
     <script src="https://www.prefeitura.sp.gov.br/cidade/js/main.19.4.29.193724-min.js "></script>
+    <script src="scripts/robo.js "></script>
 </body>
 
 </html>
