@@ -105,8 +105,8 @@
                 <form>
                     <div class="row mb-3">
                         <div class="col-md-8">
-                            <label for="applicantName">Nome do requerente</label>
-                            <input type="text" class="form-control" id="applicantName" placeholder="Nome do requerente" required>
+                            <label for="applicantName">Nome/Razão Social do Requerente</label>
+                            <input type="text" class="form-control" id="applicantName" placeholder="Nome/Razão Social do Requerente" required>
                         </div>
                         <div class="col-md-4">
                             <label for="applicantCPF">CPF/CNPJ do requerente</label>
@@ -115,12 +115,30 @@
                     </div>
                     <div class="row mb-3">
                         <div class="col-md-4">
-                            <label for="phone">Telefone</label>
+                            <label for="applicantEmail">Email</label>
+                            <input type="text" class="form-control" id="phone" placeholder="Email" required>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="applicantPhone">Telefone</label>
                             <input type="text" class="form-control" id="phone" placeholder="Telefone" required>
                         </div>
                         <div class="col-md-4">
-                            <label for="cell">Celular</label>
+                            <label for="applicantCell">Celular</label>
                             <input type="text" class="form-control" id="cell" placeholder="Celular" required>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label for="addressName">Endereço</label>
+                            <input type="text" class="form-control" id="addressName" placeholder="Endereço" required>
+                        </div>
+                        <div class="col-md-2">
+                            <label for="addressNumber">Número</label>
+                            <input type="text" class="form-control" id="addressNumber" placeholder="Número" required>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="neighbourhood">Bairro</label>
+                            <input type="text" class="form-control" id="neighbourhood" placeholder="Bairro" required>
                         </div>
                     </div>
                     <div class="row mb-3">
@@ -139,8 +157,8 @@
                     </div>
                     <div class="form-group">
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="hasRepresentative" required>
-                            <label class="form-check-label" for="hasRepresentative">
+                            <input id="shouldHaveRepresentative" class="form-check-input" type="checkbox" value="" id="hasRepresentative" required>
+                            <label id="shouldHaveRepresentative" class="form-check-label" for="hasRepresentative">
                                 Possui representante legal
                             </label>
                         </div>
@@ -158,11 +176,22 @@
                     <div class="row mb-3">
                         <div class="col-md-4">
                             <label for="representativePhone">Telefone do representante legal</label>
+                            <input type="text" class="form-control" id="representativeEmail" placeholder="Telefone do representante legal" disabled>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="representativePhone">Telefone do representante legal</label>
                             <input type="text" class="form-control" id="representativePhone" placeholder="Telefone do representante legal" disabled>
                         </div>
                         <div class="col-md-4">
                             <label for="representativeCell">Celular do representante legal</label>
                             <input type="text" class="form-control" id="representativeCell" placeholder="Celular do representante legal" disabled>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-md-4">
+                            <label for="status">Status do representante legal</label> <br>
+                            <label class="radio-inline"><input type="radio" id="representativeStatus1" name="status" value="active" disabled>Ativo</label>
+                            <label class="radio-inline"><input type="radio" id="representativeStatus0" name="status" value="inactive" disabled>Inativo</label>
                         </div>
                     </div>
 
@@ -184,6 +213,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js "></script>
     <script src="https://www.prefeitura.sp.gov.br/cidade/js/bootstrap-3.3.7.min.js "></script>
     <script src="https://www.prefeitura.sp.gov.br/cidade/js/main.19.4.29.193724-min.js "></script>
+    <script src="scripts/robo.js"></script>
 </body>
 
 </html>
