@@ -207,6 +207,7 @@ body {
 .info-box {
     border: 1px solid #1E1A17;
     margin-left: 15px;
+    border-radius: 5px;
 }
 
 .justify-between {
