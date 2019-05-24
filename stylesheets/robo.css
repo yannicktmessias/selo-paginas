@@ -83,8 +83,8 @@ body {
 }
 
 .red-btn {
-    background: #df0700;
-    border: 2px solid #df0700;
+    background: #ad0600;
+    border: 2px solid #ad0600;
     color: #fff;
     text-align: center;
     padding: 5px 10px;
@@ -93,8 +93,8 @@ body {
 
 .red-btn:hover {
     background: #fff;
-    border: 2px solid #df0700;
-    color: #df0700;
+    border: 2px solid #ad0600;
+    color: #ad0600;
 }
 
 .remember {
@@ -200,7 +200,7 @@ body {
 }
 
 .need-attention {
-    background-color: #df0700;
+    background-color: #ad0600;
     color: #fff;
 }
 
@@ -242,7 +242,7 @@ body {
 }
 
 .red {
-    background-color: #df0700;
+    background-color: #ad0600;
     color: #fff;
 }
 
