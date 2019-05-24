@@ -204,6 +204,11 @@ body {
     color: #fff;
 }
 
+.problem-url {
+    background-color: #c9ab03;
+    color: #000;
+}
+
 .info-box {
     border: 1px solid #1E1A17;
     margin-left: 15px;
