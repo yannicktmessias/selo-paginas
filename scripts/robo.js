@@ -10,6 +10,45 @@ jQuery(document).ready(function() {
         window.location.href = "new_selo_2.html";
     });
 
+    $('input[name="daterange"]').daterangepicker({
+        "locale": {
+            "format": "DD/MM/YYYY",
+            "separator": " - ",
+            "applyLabel": "Aplicar",
+            "cancelLabel": "Cancelar",
+            "fromLabel": "Até",
+            "toLabel": "De",
+            "customRangeLabel": "Custom",
+            "weekLabel": "S",
+            "daysOfWeek": [
+                "D",
+                "S",
+                "T",
+                "Q",
+                "Q",
+                "S",
+                "S"
+            ],
+            "monthNames": [
+                "Janeiro",
+                "Fevereiro",
+                "Março",
+                "Abril",
+                "Maio",
+                "Junho",
+                "Julho",
+                "Agosto",
+                "Setembro",
+                "Outubro",
+                "Novembro",
+                "Dezembro"
+            ],
+            "firstDay": 1
+        },
+        "startDate": moment(),
+        "endDate": moment()
+    });
+
     $("#shouldHaveRepresentative").click(function() {
         var representativeFormIds = [
             'representativeName',
