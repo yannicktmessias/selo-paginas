@@ -115,7 +115,11 @@
                     </div>
                     <div class="row mb-3">
                         <div class="col-md-4">
-                            <label for="phone">CPF</label>
+                            <label for="email">Email</label>
+                            <input type="text" class="form-control" id="email" placeholder="Email" required>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="cpf">CPF</label>
                             <input type="text" class="form-control" id="cpf" placeholder="CPF" required>
                         </div>
                         <div class="col-md-4">
@@ -124,11 +128,28 @@
                         </div>
                     </div>
                     <div class="row mb-3">
+                        <div class="col-md-4">
+                            <label for="phone">Telefone para contato</label>
+                            <input type="text" class="form-control" id="phone1" placeholder="Telefone para contato" required>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="phone2">Celular</label>
+                            <input type="text" class="form-control" id="phone2" placeholder="Celular" required>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
                         <div class="col-md-6">
                             <fieldset>
                                 <label for="permissions">Permissão de escrita?</label> <br>
                                 <label class="radio-inline"><input type="radio" name="permissions" value="r" checked>Não</label>
                                 <label class="radio-inline"><input type="radio" name="permissions" value="rw">Sim</label>
+                            </fieldset>
+                        </div>
+                        <div class="col-md-6">
+                            <fieldset>
+                                <label for="permissions">É administrador?</label> <br>
+                                <label class="radio-inline"><input type="radio" name="admin" value="0" checked>Não</label>
+                                <label class="radio-inline"><input type="radio" name="admin" value="1">Sim</label>
                             </fieldset>
                         </div>
                     </div>
