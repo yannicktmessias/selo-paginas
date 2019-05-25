@@ -49,6 +49,12 @@ jQuery(document).ready(function() {
         "endDate": moment()
     });
 
+    $('input[type=radio][name=frequency]').change(function() {
+        if (this.value == 'monthly') {
+
+        }
+    });
+
     $("#shouldHaveRepresentative").click(function() {
         var representativeFormIds = [
             'representativeName',
