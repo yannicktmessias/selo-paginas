@@ -51,7 +51,11 @@ jQuery(document).ready(function() {
 
     $('input[type=radio][name=frequency]').change(function() {
         if (this.value == 'monthly') {
-
+            $("#monthlyFormGroup").show();
+            $("#weeklyFormGroup").hide();
+        } else {
+            $("#monthlyFormGroup").hide();
+            $("#weeklyFormGroup").show();
         }
     });
 
