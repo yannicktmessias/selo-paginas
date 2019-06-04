@@ -375,3 +375,11 @@ body {
 .mt-1 {
     margin-top: 1rem;
 }
+
+.mt-0 {
+    margin-top: 0;
+}
+
+.border-bottom {
+    border-bottom: 1px solid #ccc;
+}
