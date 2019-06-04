@@ -106,13 +106,26 @@
             <div class="col-md-9 col-xs-12" id="content" tabindex="-1">
                 <form>
                     <div class="row mb-3">
+                        <div class="col-md-12 checkbox">
+                            <fieldset>
+                                <legend> Confirme os links do selo (links <b>não</b> confirmados ficarão inativos) </legend>
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <label for="link1"><input type="checkbox" name="links" id="link1" value="link1">link1</label> <br>
+                                        <label for="link2"><input type="checkbox" name="links" id="link2" value="link2">link2</label> <br>
+                                        <label for="link3"><input type="checkbox" name="links" id="link3" value="link3">link3</label> <br>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
                         <div class="col-md-8">
                             <label for="renew-date">Renovar até: </label>
                             <input type="text" name="applicationDate" id="application-date" aria-describedby="application-date-help">
                             <span id="application-date-help">DD/MM/AAAA</span>
                         </div>
                     </div>
-
                     <button class="btn btn-primary col-xs-6 col-md-4" type="submit">Salvar</button>
                 </form>
             </div>
