@@ -1,0 +1,1168 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="copyright" content="" />
+    <meta name="rating" content="general" />
+    <meta name="DC.publisher" content="Prefeitura da Cidade de São Paulo" />
+    <meta name="revisit-after" content="0 days" />
+    <meta name="theme-color" content="#eee">
+    <meta name="keywords" content="Robô verificador,Pessoa com Deficiencia,Secretaria Municipal da Pessoa com Deficiência,Prefeitura da Cidade de São Paulo" />
+    <meta name="description" content="Robô verificador dos Selos de Acessibilidade da Secretaria Municipal da Pessoa com Deficiência da Prefeitura da Cidade de São Paulo" />
+    <title>Robô verificador | Secretaria Municipal da Pessoa com Deficiência | Prefeitura da Cidade de São Paulo</title>
+    <link rel="manifest" href="https://www.prefeitura.sp.gov.br/cidade/manifest.json" />
+    <link rel="shortcut icon" type="image/x-icon" href="https://www.prefeitura.sp.gov.br/cidade/img/favicon.ico" />
+    <link rel="apple-touch-icon" href="https://www.prefeitura.sp.gov.br/cidade/img/favicon.gif" />
+    <link rel="stylesheet" href="https://www.prefeitura.sp.gov.br/cidade/css/main.19.4.29.193724-min.css">
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="stylesheets/robo.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+
+    <!--[if lt IE 9]><script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script> <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+
+    <style type="text/css">
+        .card-body {
+            font-weight: lighter;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-9">
+                    <nav id="accessibility">
+                        <ul class="list-inline nav-accessibility">
+                            <li> <a href="#nav" accesskey="1">Ir para o menu</a> <span class="label">[1]</span>
+                            </li>
+                            <li> <a href="#content" accesskey="2">Ir para o conteúdo</a> <span class="label">[2]</span>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="col-xs-3 text-right">
+                    <p>Acessando como
+                        <b>Yannick Thomas Messias</b>, <a href="login.html">Sair</a>
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-2 col-xs-3 text-left">
+                    <a href="http://www.prefeitura.sp.gov.br/cidade/secretarias/pessoa_com_deficiencia/"> <img class="header-logo-smped" src="images/PESSOA COM DEFICI“NCIA_PB_NEGATIVO.png" alt="SMPED">
+                    </a>
+                </div>
+                <div class="col-md-8 col-xs-6 text-center">
+                    <a class="header-title" href="home.html"> Robô Verificador de Selos de Acessibilidade </a>
+                </div>
+                <div class="col-md-2 col-xs-3 text-center">
+                    <a href="http://www.prefeitura.sp.gov.br/"> <img class="header-logo-prefeitura" src="images/CIDADE DE S«O PAULO_HORIZONTAL_FUNDO_ESCURO.png" alt="Prefeitura de São Paulo">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="container fill content-box">
+        <div class="row">
+            <div class="col-md-3 nav-left">
+                <nav id="nav" class="navbar navbar-default">
+                    <div class="container-fluid">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false"> <span
+                                    class="sr-only">Alternar de navega&ccedil;&atilde;o</span> <span
+                                    class="icon-bar"></span> <span class="icon-bar"></span> <span
+                                    class="icon-bar"></span> </button>
+                            <a class="navbar-brand" href="#">
+                                <h1 class="nav-title">Avaliação Manual</h1>
+                            </a>
+                        </div>
+                        <div class="collapse navbar-collapse panel-nav" id="bs-example-navbar-collapse-1">
+                            <div class="nav navbar-nav">
+                                <ul>
+                                    <li>
+                                        <a href="{% url 'list_certifications' %}">SELOS</a>
+                                        <ul>
+                                            <li><a href="{% url 'search_certification' %}">Pesquisar Selo</a></li>
+                                            <li><a href="{% url 'new_certification_applicant' %}">Adicionar Selo</a></li>
+                                            <!--                                 
+                                            <li><a href="">Parâmetros do Robô</a></li>
+                                            -->
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="{% url 'list_applicants' %}">REQUERENTES</a>
+                                        <ul>
+                                            <li><a href="{% url 'search_applicant' %}">Pesquisar Requerente</a></li>
+                                            <li><a href="{% url 'new_applicant' %}">Adicionar Requerente</a></li>
+                                        </ul>
+                                    <li>
+                                        <a href="{% url 'list_users' %}">GESTORES</a>
+                                        <ul>
+                                            <li><a href="{% url 'search_user' %}">Pesquisar Gestor</a></li>
+                                            <li><a href="{% url 'new_user' %}">Adicionar Gestor</a></li>
+                                            <li><a href="{% url 'user_info' user.rf%}">Minha conta</a></li>
+                                        </ul>
+                                    </li>
+                                    <!--
+                                    <li>
+                                        <a href="">ATIVIDADES DO SISTEMA</a>
+                                    </li>
+                                    -->
+                                </ul>
+                                &nbsp;
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+
+
+            <div class="col-md-9 col-xs-12" id="content" tabindex="-1">
+
+                <div class="row mb-3">
+                <h3>https://www.prefeitura.sp.gov.br/cidade/secretarias/subprefeituras/cidade_tiradentes/</h3>
+                <a target="_blank" href="https://www.prefeitura.sp.gov.br/cidade/secretarias/subprefeituras/cidade_tiradentes/">(abrir a página em outra aba)</a>
+                |
+                <a target="_blank" href="https://wave.webaim.org/report#/https://www.prefeitura.sp.gov.br/cidade/secretarias/subprefeituras/cidade_tiradentes/">(abrir a página no wave.webain.org em outra aba)</a>
+                </div>
+
+                <ul class="nav nav-tabs">
+                    <li class="active"><a data-toggle="tab" href="#navigation_form" aria-expanded="true">Navegação</a></li>
+                    <li class=""><a data-toggle="tab" href="#structure_form" aria-expanded="false">Estrutura</a></li>
+                    <li class=""><a data-toggle="tab" href="#images_form" aria-expanded="false">Imagens</a></li>
+                    <li class=""><a data-toggle="tab" href="#forms_form" aria-expanded="false">Formulários</a></li>
+                    <li class=""><a data-toggle="tab" href="#elements_form" aria-expanded="false">Elementos</a></li>
+                    <li class=""><a data-toggle="tab" href="#texts_form" aria-expanded="false">Texto</a></li>
+                    <li class=""><a data-toggle="tab" href="#videos_form" aria-expanded="false">Multimídia</a></li>
+                    <li class=""><a data-toggle="tab" href="#final_form" aria-expanded="false">Finalizar</a></li>
+                </ul>
+
+                <form>
+                    <div class="tab-content">
+                        <div id="navigation_form" class="tab-pane fade active in">
+                            <h3>1. Navegação na página</h3>
+                            <p>
+                                Navegando pelos links do sítio ou portal eletrônico com as teclas TAB (para avançar) e SHIFT + TAB (para voltar).
+                            </p>
+                            <br/>
+
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <fieldset>
+                                        <label for="1_1">
+                                            1.1 - É possível utilizar a tecla TAB e as demais teclas do teclado sem impedimento e acessar todos os links e elementos do formulário da página?
+                                            <a data-toggle="collapse" href="#1_1_details" role="button" aria-expanded="false" aria-controls="1_1_details" class="collapsed">
+                                                <span class="glyphicon glyphicon-info-sign"></span>
+                                            </a>
+                                            <div class="collapse" id="1_1_details">
+                                                <div class="card card-body">
+                                                    Usando a tecla “TAB” é possível acessar todos os elementos de interação com a página, mesmo que esses elementos não estejam evidenciados. É importante notar quando o elemento de iteração fica selecionado, porém não fica evidenciado. É esperado que, durante a navegação com a tecla “TAB”, o foco não fique preso em algum elemento, permitindo que todos os elementos da página estejam passíveis de seleção. Os demais botões de atalhos também são de grande valia na verificação desse item.
+                                                </div>
+                                            </div>
+                                        </label>
+                                        <br/>
+                                        <label class="radio-inline"><input type="radio" name="1_1" value="1" checked="">Sim</label>
+                                        <label class="radio-inline"><input type="radio" name="1_1" value="0">Não</label>
+                                    </fieldset>
+                                </div>
+                            
+                                <div class="col-md-6">
+                                    <fieldset>
+                                        <label for="1_2">
+                                            1.2 - O conteúdo dos links é claro e informa qual página será aberta?
+                                            <a data-toggle="collapse" href="#1_2_details" role="button" aria-expanded="false" aria-controls="1_2_details" class="collapsed">
+                                                <span class="glyphicon glyphicon-info-sign"></span>
+                                            </a>
+                                            <div class="collapse" id="1_2_details">
+                                                <div class="card card-body">
+                                                    O uso da tecla de atalho “K” facilita a verificação desse item, pois essa tecla navega exclusivamente nos links da página. Sendo assim, o entendimento para onde o link irá direcionar o usuário deve ser claro, e não deve gerar dúvidas ao usuário para onde ele estará sendo conduzido.
+                                                </div>
+                                            </div>
+                                        </label> 
+                                        <br/>
+                                        <label class="radio-inline"><input type="radio" name="1_2" value="1" checked>Sim</label>
+                                        <label class="radio-inline"><input type="radio" name="1_2" value="0">Não</label>
+                                    </fieldset>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <fieldset>
+                                        <label for="1_3">
+                                            1.3 - Caso haja links adjacentes (sequência de links), estes estão separados explicitamente de forma que não há cacofonia (confusão ou extrema repetição), quando se ouve uma sequência longa de links?
+                                            <a data-toggle="collapse" href="#1_3_details" role="button" aria-expanded="false" aria-controls="1_3_details" class="collapsed">
+                                                <span class="glyphicon glyphicon-info-sign"></span>
+                                            </a>
+                                            <div class="collapse" id="1_3_details">
+                                                <div class="card card-body">
+                                                    O uso das teclas de atalho “L”, “I”, “K” e também a tecla “TAB” são importantes na investigação desse item. Itens de uma lista que direcionam o usuário a outra página, ao navegar por esses itens e o leitor de tela começar a descrever vários links de navegação, ou ainda, que o áudio não esteja claro, anunciando palavras confusas, que apresentam ambiguidade, é indício de problema. É importante que os links estejam em elementos de navegação separados e, ao selecionar o link, que este esteja claro quanto ao direcionamento que dará ao usuário, não oferecer ambiguidade entre um link e outro e não reproduzir um som estranho, esquisito, que seja de pronúncia ruim, pois isso pode dificultar a fala do leitor de tela e, consequentemente, um entendimento errado ao usuário.
+                                                </div>
+                                            </div>
+                                        </label> 
+                                        <br/>
+                                        <label class="radio-inline"><input type="radio" name="1_3" value="1" checked>Sim</label>
+                                        <label class="radio-inline"><input type="radio" name="1_3" value="0">Não</label>
+                                    </fieldset>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="structure_form" class="tab-pane fade">
+                            <h3>2. Estrutura, navegação por cabeçalhos e por blocos de conteúdos</h3>
+                            <p>
+                                Os níveis de cabeçalho (elementos HTML H1 a H6) devem ser utilizados de forma hierárquica, pois organizam a ordem de importância e subordinação dos conteúdos, facilitando a leitura e compreensão. Pelo leitor de tela, deve ser possível navegar de um cabeçalho a outro e verificar a estrutura da página. A maioria dos leitores de tela utiliza o atalho "H" do teclado em combinação com os números de 01 a 06. A codificação da Estrutura, dos cabeçalhos, dos blocos de conteúdos e dos outros elementos no código-fonte da página quando estão no padrão W3C e de forma semântica melhoram substancialmente a navegação e a experiência do usuário com deficiência.
+                            </p>
+                            <br/>
+
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <fieldset>
+                                        <label for="2_1">
+                                            2.1 A hierarquia de cabeçalhos existe e está clara?
+                                            <a data-toggle="collapse" href="#2_1_details" role="button" aria-expanded="false" aria-controls="2_1_details" class="collapsed">
+                                                <span class="glyphicon glyphicon-info-sign"></span>
+                                            </a>
+                                            <div class="collapse" id="2_1_details">
+                                                <div class="card card-body">
+                                                    O uso da tecla de atalho “H” combinado com números de 1 à 6 e ainda, clicando com o botão direito do mouse sobre a tela e selecionando o item “Inspecionar” para investigação do código HTML, pressionando o comando “Ctrl + F” para ativar a caixa de busca e, na caixa de busca escrever a tag “h1”, depois “h2”, até “h6”, serão os comandos para investigação desse item. Tanto usando a tecla de atalho “H”, quanto na investigação do código HTML, é esperado sempre encontrar uma, e apenas uma, tag h1, que representa o título principal. Para os demais subtítulos é esperado encontrar em ordem crescente, h1, seguido de h2, seguido de h3, e assim por diante. As tags não devem pular essa ordem.
+                                                </div>
+                                            </div>
+                                        </label> 
+                                        <br/>
+                                        <label class="radio-inline"><input type="radio" name="2_1" value="1" checked>Sim</label>
+                                        <label class="radio-inline"><input type="radio" name="2_1" value="0">Não</label>
+                                    </fieldset>
+                                </div>
+                            
+                                <div class="col-md-6">
+                                    <fieldset>
+                                        <label for="2_2">
+                                            2.2 Os cabeçalhos estão ordenados e não há repetição do nível de cabeçalho "h1"?
+                                            <a data-toggle="collapse" href="#2_2_details" role="button" aria-expanded="false" aria-controls="2_2_details" class="collapsed">
+                                                <span class="glyphicon glyphicon-info-sign"></span>
+                                            </a>
+                                            <div class="collapse" id="2_2_details">
+                                                <div class="card card-body">
+                                                    Tal qual o item 2.1, porém o cabeçalho mais importante deve ser “h1” no HTML, não pode ser repetido. Neste item deve ser checado se os cabeçalhos têm relação no texto equivalente à relação no HTML, por exemplo: se existir um tema “Máquinas” e um tópico ”Peças” com um subitem “Engrenagens”, a hierarquia deveria ser: o Máquinas – h1; o Peças – h2; o Engrenagens – h3.
+                                                </div>
+                                            </div>
+                                        </label> 
+                                        <br/>
+                                        <label class="radio-inline"><input type="radio" name="2_2" value="1" checked>Sim</label>
+                                        <label class="radio-inline"><input type="radio" name="2_2" value="0">Não</label>
+                                    </fieldset>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <fieldset>
+                                        <label for="2_3">
+                                            2.3 A leitura e tabulação estão ordenadas de forma lógica e intuitiva?
+                                            <a data-toggle="collapse" href="#2_3_details" role="button" aria-expanded="false" aria-controls="2_3_details" class="collapsed">
+                                                <span class="glyphicon glyphicon-info-sign"></span>
+                                            </a>
+                                            <div class="collapse" id="2_3_details">
+                                                <div class="card card-body">
+                                                    Usando as mesmas teclas de atalho do item 2.1, aqui será checar se a leitura das telas segue um fluxo lógico ao utilizar os cabeçalhos “h” para navegar, por exemplo, uma página de receitas de bolo poderia ter a seguindo estrutura que, no exemplo, a tag h1 indica a temática do conteúdo da página, as tags h2 as categorias e, as tag h3, os bolos propriamente ditos.
+                                                </div>
+                                            </div>
+                                        </label> 
+                                        <br/>
+                                        <label class="radio-inline"><input type="radio" name="2_3" value="1" checked>Sim</label>
+                                        <label class="radio-inline"><input type="radio" name="2_3" value="0">Não</label>
+                                    </fieldset>
+                                </div>
+                            
+                                <div class="col-md-6">
+                                    <fieldset>
+                                        <label for="2_4">
+                                            2.4 O título da tabela está definido e localizado no primeiro elemento da tabela?
+                                            <a data-toggle="collapse" href="#2_4_details" role="button" aria-expanded="false" aria-controls="2_4_details" class="collapsed">
+                                                <span class="glyphicon glyphicon-info-sign"></span>
+                                            </a>
+                                            <div class="collapse" id="2_4_details">
+                                                <div class="card card-body">
+                                                    O cabeçalho da tabela deve existir e ser composto primeiramente do título da tabela.
+                                                </div>
+                                            </div>
+                                        </label> 
+                                        <br/>
+                                        <label class="radio-inline"><input type="radio" name="2_4" value="1" checked>Sim</label>
+                                        <label class="radio-inline"><input type="radio" name="2_4" value="0">Não</label>
+                                    </fieldset>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <fieldset>
+                                        <label for="2_5">
+                                            2.5 Há um resumo dos dados de tabelas extensas e/ou é possível compreender a complexidade da tabela informacional?
+                                            <a data-toggle="collapse" href="#2_5_details" role="button" aria-expanded="false" aria-controls="2_5_details" class="collapsed">
+                                                <span class="glyphicon glyphicon-info-sign"></span>
+                                            </a>
+                                            <div class="collapse" id="2_5_details">
+                                                <div class="card card-body">
+                                                    Pode ser que a tabela tenha muitas colunas e conteúdo complexo, caso seja esse o caso é importante que exista um texto resumindo o conteúdo ou, pelo menos, instruindo uma maneira de se interpretar a tabela.
+                                                </div>
+                                            </div>
+                                        </label> 
+                                        <br/>
+                                        <label class="radio-inline"><input type="radio" name="2_5" value="1" checked>Sim</label>
+                                        <label class="radio-inline"><input type="radio" name="2_5" value="0">Não</label>
+                                    </fieldset>
+                                </div>
+                            
+                                <div class="col-md-6">
+                                    <fieldset>
+                                        <label for="2_6">
+                                            2.6 Em tabelas de dados simples, estão associadas células de dados às células de cabeçalho?
+                                            <a data-toggle="collapse" href="#2_6_details" role="button" aria-expanded="false" aria-controls="2_6_details" class="collapsed">
+                                                <span class="glyphicon glyphicon-info-sign"></span>
+                                            </a>
+                                            <div class="collapse" id="2_6_details">
+                                                <div class="card card-body">
+                                                    Nesse item é verificada a coesão dos dados da tabela, por exemplo, em uma coluna de cabeçalho “Nome” espera-se encontrar nomes de pessoas, e não data de aniversário, ou mesmo em coluna de cabeçalho “Nota de Prova” conter dados de altura.
+                                                </div>
+                                            </div>
+                                        </label> 
+                                        <br/>
+                                        <label class="radio-inline"><input type="radio" name="2_6" value="1" checked>Sim</label>
+                                        <label class="radio-inline"><input type="radio" name="2_6" value="0">Não</label>
+                                    </fieldset>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <fieldset>
+                                        <label for="2_7">
+                                            2.7 Existe aviso antes da atualização automática periódica da página (‘refresh’), do redirecionamento automático para uma nova página e/ou na abertura de uma nova aba ou janela?
+                                            <a data-toggle="collapse" href="#2_7_details" role="button" aria-expanded="false" aria-controls="2_7_details" class="collapsed">
+                                                <span class="glyphicon glyphicon-info-sign"></span>
+                                            </a>
+                                            <div class="collapse" id="2_7_details">
+                                                <div class="card card-body">
+                                                    Em um site de notícia que sempre que é postado uma nova notícia e, portanto, acontece uma atualização da página, é esperado que seja anunciada essa atualização. E ainda, ao acessar uma página de conteúdo restrito, onde o conteúdo é apresentado apenas após o usuário efetuar um login, é também esperado o anuncio do redirecionamento da página de login à página do conteúdo desejado.
+                                                </div>
+                                            </div>
+                                        </label> 
+                                        <br/>
+                                        <label class="radio-inline"><input type="radio" name="2_7" value="1" checked>Sim</label>
+                                        <label class="radio-inline"><input type="radio" name="2_7" value="0">Não</label>
+                                    </fieldset>
+                                </div>
+                            
+                                <div class="col-md-6">
+                                    <fieldset>
+                                        <label for="2_8">
+                                            2.8 Todas as funções da página são disponibilizadas via teclado, sem bloquear o foco ou fixá-lo em um elemento da página?
+                                            <a data-toggle="collapse" href="#2_8_details" role="button" aria-expanded="false" aria-controls="2_8_details" class="collapsed">
+                                                <span class="glyphicon glyphicon-info-sign"></span>
+                                            </a>
+                                            <div class="collapse" id="2_8_details">
+                                                <div class="card card-body">
+                                                    Todos os botões de atalhos de navegação são passíveis de serem usados para investigação desse item e, durante a navegação, é esperado que o usuário não seja bloqueado em qualquer elemento de iteração com a página.
+                                                </div>
+                                            </div>
+                                        </label> 
+                                        <br/>
+                                        <label class="radio-inline"><input type="radio" name="2_8" value="1" checked>Sim</label>
+                                        <label class="radio-inline"><input type="radio" name="2_8" value="0">Não</label>
+                                    </fieldset>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <fieldset>
+                                        <label for="2_9">
+                                            2.9 Elementos que recebem o foco pelo teclado estão claramente marcados, ficando evidentes e passíveis de serem clicados?
+                                            <a data-toggle="collapse" href="#2_9_details" role="button" aria-expanded="false" aria-controls="2_9_details" class="collapsed">
+                                                <span class="glyphicon glyphicon-info-sign"></span>
+                                            </a>
+                                            <div class="collapse" id="2_9_details">
+                                                <div class="card card-body">
+                                                    Ao se utilizar do teclado para efetuar a navegação, verificar se todos os elementos se encontram destacados quando selecionados e se essa seleção realmente fica aparente de maneira a não deixar dúvida ao usuário qual botão, link ou qualquer outro elemento esteja o foco.
+                                                </div>
+                                            </div>
+                                        </label> 
+                                        <br/>
+                                        <label class="radio-inline"><input type="radio" name="2_9" value="1" checked>Sim</label>
+                                        <label class="radio-inline"><input type="radio" name="2_9" value="0">Não</label>
+                                    </fieldset>
+                                </div>
+                            
+                                <div class="col-md-6">
+                                    <fieldset>
+                                        <label for="2_10">
+                                            2.10 Todos os scripts, conteúdos dinâmicos, interfaces de controle e outros elementos programáveis con dos nas páginas (por exemplo: plugins de visualização de PDF, gráficos de pizza dinâmicos, carrossel com troca de slide, entre outros) são acessíveis? Caso contrário, existe conteúdo equivalente?
+                                            <a data-toggle="collapse" href="#2_10_details" role="button" aria-expanded="false" aria-controls="2_10_details" class="collapsed">
+                                                <span class="glyphicon glyphicon-info-sign"></span>
+                                            </a>
+                                            <div class="collapse" id="2_10_details">
+                                                <div class="card card-body">
+                                                    Em vídeos, plug-ins de visualização de texto, que possuam botões de manipulação como “Pause/Play”, “Download” e outros possíveis botões, esses são de fácil acesso e manipulação.
+                                                </div>
+                                            </div>
+                                        </label> 
+                                        <br/>
+                                        <label class="radio-inline"><input type="radio" name="2_10" value="1" checked>Sim</label>
+                                        <label class="radio-inline"><input type="radio" name="2_10" value="0">Não</label>
+                                    </fieldset>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <fieldset>
+                                        <label for="2_11">
+                                            2.11 É possível acessar todo o conteúdo em lista e em seu(s) sub-nível(is)?
+                                            <a data-toggle="collapse" href="#2_11_details" role="button" aria-expanded="false" aria-controls="2_11_details" class="collapsed">
+                                                <span class="glyphicon glyphicon-info-sign"></span>
+                                            </a>
+                                            <div class="collapse" id="2_11_details">
+                                                <div class="card card-body">
+                                                    Verificar se conteúdo de listas e sub itens são acessíveis, o uso das tecla “l” e “i” se fazem necessário.
+                                                </div>
+                                            </div>
+                                        </label> 
+                                        <br/>
+                                        <label class="radio-inline"><input type="radio" name="2_11" value="1" checked>Sim</label>
+                                        <label class="radio-inline"><input type="radio" name="2_11" value="0">Não</label>
+                                    </fieldset>
+                                </div>
+                            
+                                <div class="col-md-6">
+                                    <fieldset>
+                                        <label for="2_12">
+                                            2.12 As cores do plano de fundo e do primeiro plano estão suficientemente contrastantes?
+                                            <a data-toggle="collapse" href="#2_12_details" role="button" aria-expanded="false" aria-controls="2_12_details" class="collapsed">
+                                                <span class="glyphicon glyphicon-info-sign"></span>
+                                            </a>
+                                            <div class="collapse" id="2_12_details">
+                                                <div class="card card-body">
+                                                    Para checar o contraste, utilizar a ferramenta “NoCoffee” e na opção “Contrast Loss” ajustar para “25”, ou ainda, usar algum checador de contraste de cores online, por exemplo o WebAIM. No WebAIM é possível passar o código hexadecimal das cores e contrasta-las, onde é esperado um valor superior à 7:1.
+                                                </div>
+                                            </div>
+                                        </label> 
+                                        <br/>
+                                        <label class="radio-inline"><input type="radio" name="2_12" value="1" checked>Sim</label>
+                                        <label class="radio-inline"><input type="radio" name="2_12" value="0">Não</label>
+                                    </fieldset>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <fieldset>
+                                        <label for="2_13">
+                                            2.13 Inexistem efeitos visuais piscantes, intermitentes ou cintilantes?
+                                            <a data-toggle="collapse" href="#2_13_details" role="button" aria-expanded="false" aria-controls="2_13_details" class="collapsed">
+                                                <span class="glyphicon glyphicon-info-sign"></span>
+                                            </a>
+                                            <div class="collapse" id="2_13_details">
+                                                <div class="card card-body">
+                                                    Verificar se algum elemento como, por exemplo, Gifs animados estão presentes e apresentam uma repetição em sua sequência de exibição em intervalos pequenos, ou ainda se há propagandas com cores fluorescentes piscantes, chamando a atenção de maneira incomoda.
+                                                </div>
+                                            </div>
+                                        </label> 
+                                        <br/>
+                                        <label class="radio-inline"><input type="radio" name="2_13" value="1" checked>Sim</label>
+                                        <label class="radio-inline"><input type="radio" name="2_13" value="0">Não</label>
+                                    </fieldset>
+                                </div>
+                            
+                                <div class="col-md-6">
+                                    <fieldset>
+                                        <label for="2_14">
+                                            2.14 O idioma principal da página está identificado?
+                                            <a data-toggle="collapse" href="#2_14_details" role="button" aria-expanded="false" aria-controls="2_14_details" class="collapsed">
+                                                <span class="glyphicon glyphicon-info-sign"></span>
+                                            </a>
+                                            <div class="collapse" id="2_14_details">
+                                                <div class="card card-body">
+                                                    O elemento que mostra o idioma da página pode ser uma bandeira representando o país origem da língua. Independente do caso deve ser possível identificar utilizando o programa NVDA.
+                                                </div>
+                                            </div>
+                                        </label> 
+                                        <br/>
+                                        <label class="radio-inline"><input type="radio" name="2_14" value="1" checked>Sim</label>
+                                        <label class="radio-inline"><input type="radio" name="2_14" value="0">Não</label>
+                                    </fieldset>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <fieldset>
+                                        <label for="2_15">
+                                            2.15 Os elementos que possuem conteúdo em um idioma diferente do principal estão devidamente identificados?
+                                            <a data-toggle="collapse" href="#2_15_details" role="button" aria-expanded="false" aria-controls="2_15_details" class="collapsed">
+                                                <span class="glyphicon glyphicon-info-sign"></span>
+                                            </a>
+                                            <div class="collapse" id="2_15_details">
+                                                <div class="card card-body">
+                                                    Se ocorrer de algum trecho de texto do conteúdo principal for alguma citação em língua estrangeira, ou qualquer outro elemento em língua estrangeira não casual, devem conter ao menos um pequeno comentário dizendo em qual é o idioma. Caso as palavras seja corriqueiras como, “shopping”, “facebook”, “mindset”, não levar em consideração esse critério.
+                                                </div>
+                                            </div>
+                                        </label> 
+                                        <br/>
+                                        <label class="radio-inline"><input type="radio" name="2_15" value="1" checked>Sim</label>
+                                        <label class="radio-inline"><input type="radio" name="2_15" value="0">Não</label>
+                                    </fieldset>
+                                </div>
+                            
+                                <div class="col-md-6">
+                                    <fieldset>
+                                        <label for="2_16">
+                                            2.16 Em resumo, é possível compreender a estrutura da página de forma que não gere confusão e se saiba qual informação será obtida ou quais ações e tarefas devem ser executadas com clareza?
+                                            <a data-toggle="collapse" href="#2_16_details" role="button" aria-expanded="false" aria-controls="2_16_details" class="collapsed">
+                                                <span class="glyphicon glyphicon-info-sign"></span>
+                                            </a>
+                                            <div class="collapse" id="2_16_details">
+                                                <div class="card card-body">
+                                                    O teste deve ser executado principalmente utilizando o leitor de telas NVDA; se for necessário navegar por toda a página mais que uma vez para entender a estrutura da página, pode ser indício de falta de semântica na construção, e/ou que seu conteúdo não está claro. Neste item também deve ser checado se os botões e links apresentam com clareza as suas funções.
+                                                </div>
+                                            </div>
+                                        </label> 
+                                        <br/>
+                                        <label class="radio-inline"><input type="radio" name="2_16" value="1" checked>Sim</label>
+                                        <label class="radio-inline"><input type="radio" name="2_16" value="0">Não</label>
+                                    </fieldset>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <fieldset>
+                                        <label for="2_17">
+                                            2.17 Caso haja Pop-ups (moldais), estes são acessíveis?
+                                            <a data-toggle="collapse" href="#2_17_details" role="button" aria-expanded="false" aria-controls="2_17_details" class="collapsed">
+                                                <span class="glyphicon glyphicon-info-sign"></span>
+                                            </a>
+                                            <div class="collapse" id="2_17_details">
+                                                <div class="card card-body">
+                                                    Verificar os elementos de iteração com a página se, ao clica-lo, esse não joga na tela uma modal e, se for o caso, se ela é acessível. Pode ocorrer de, ao navegar pelo elementos da modal, quando chegar ao último elemento da modal, o próximo elemento ser o elemento da página, sendo que a modal ainda continua aberta.
+                                                </div>
+                                            </div>
+                                        </label> 
+                                        <br/>
+                                        <label class="radio-inline"><input type="radio" name="2_17" value="1" checked>Sim</label>
+                                        <label class="radio-inline"><input type="radio" name="2_17" value="0">Não</label>
+                                    </fieldset>
+                                </div>
+                            
+                                <div class="col-md-6">
+                                    <fieldset>
+                                        <label for="2_18">
+                                            2.18 As páginas são acessíveis e responsivas em dispositivos móveis?
+                                            <a data-toggle="collapse" href="#2_18_details" role="button" aria-expanded="false" aria-controls="2_18_details" class="collapsed">
+                                                <span class="glyphicon glyphicon-info-sign"></span>
+                                            </a>
+                                            <div class="collapse" id="2_18_details">
+                                                <div class="card card-body">
+                                                    Pressionando a telha F12 para abrir com componentes de inspeção, depois clicando na opção “Toggle device Toolbar“ verificar se o conteúdo se adequa às novas dimensões sem necessitar de barra de rolagem. Nesse item ficar atento aos menus que muitas vezes apresentam erros, assim como imagens que podem se sobrepor aos textos, até mesmo se sobrepõe a outras imagens.
+                                                </div>
+                                            </div>
+                                        </label> 
+                                        <br/>
+                                        <label class="radio-inline"><input type="radio" name="2_18" value="1" checked>Sim</label>
+                                        <label class="radio-inline"><input type="radio" name="2_18" value="0">Não</label>
+                                    </fieldset>
+                                </div>
+                            </div>
+                            <p>
+                                Nota: Recomenda-se aderência aos itens abaixo, porém não obrigatoriamente.
+                                <ol>
+                                    <li>
+                                        Crie âncoras para ir direto a um bloco de conteúdo como, por exemplo: o primeiro link da pagina é o "Ir para o conteúdo principal", o segundo link é o “Ir para o menu”, o terceiro link é o “Ir para pesquisa", o quarto link é o “Ir para o rodapé”.
+                                    </li>
+                                    <li>
+                                        Utilização de elementos do tipo tabelas ("TABLE") apenas para dados tabulares e não para efeitos de disposição dos elementos da página.
+                                    </li>
+                                    <li>
+                                        Abertura de novas instâncias de "abas ou janelas" apenas com solicitação / permissão do usuário.
+                                    </li>
+                                    <li>
+                                        O HTML5 (ou o código-fonte da pagina) é desenvolvido seguindo os padrões da W3C e de forma semântica.
+                                    </li>
+                                </ol>
+                            </p>
+                            <br/>
+                        </div>
+
+                        <div id="images_form" class="tab-pane fade">
+                            <h3>3. Imagens acessíveis</h3>
+                            <p>
+                                Os testes abaixo visam verificar se os textos alternativos que descrevem as imagens lidas pelo software leitor de tela correspondem exatamente ao que as imagens mostram. Clicando sobre a imagem e selecionando “inspecionar”, deve ser possível, no código HTML, encontrar um trecho descrevendo a imagem. Imagens que fazem parte do contexto da página (como um logotipo ou a foto que ilustra uma notícia) são consideradas imagens relevantes. Imagens decorativas, como fundo da página e bordas, não são consideradas relevantes.
+                            </p>
+                            <br/>
+
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <fieldset>
+                                        <label for="3_1">
+                                            3.1 Todas as imagens relevantes têm um texto alternativo claro e relacionado à imagem?
+                                            <a data-toggle="collapse" href="#3_1_details" role="button" aria-expanded="false" aria-controls="3_1_details" class="collapsed">
+                                                <span class="glyphicon glyphicon-info-sign"></span>
+                                            </a>
+                                            <div class="collapse" id="3_1_details">
+                                                <div class="card card-body">
+                                                    Na aba de ferramentas do desenvolvedor, verificar o código HTML relacionado à imagem, se o código contém atributo de descrição da imagem, se a descrição está clara e relacionada à imagem, sem deixar dúvida ou ambiguidade quanto ao conteúdo da imagem.
+                                                </div>
+                                            </div>
+                                        </label>
+                                        <br/>
+                                        <label class="radio-inline"><input type="radio" name="3_1" value="1" checked="">Sim</label>
+                                        <label class="radio-inline"><input type="radio" name="3_1" value="0">Não</label>
+                                    </fieldset>
+                                </div>
+                            
+                                <div class="col-md-6">
+                                    <fieldset>
+                                        <label for="3_2">
+                                            3.2 Todas as informações textuais da página são acessíveis por leitores de tela sem necessidade de OCR?
+                                            <a data-toggle="collapse" href="#3_2_details" role="button" aria-expanded="false" aria-controls="3_2_details" class="collapsed">
+                                                <span class="glyphicon glyphicon-info-sign"></span>
+                                            </a>
+                                            <div class="collapse" id="3_2_details">
+                                                <div class="card card-body">
+                                                    Algumas páginas apresentarão imagem com conteúdo textual, se for o caso, a descrição desse conteúdo deve estar descrito no código HTML de forma literal.
+                                                </div>
+                                            </div>
+                                        </label> 
+                                        <br/>
+                                        <label class="radio-inline"><input type="radio" name="3_2" value="1" checked>Sim</label>
+                                        <label class="radio-inline"><input type="radio" name="3_2" value="0">Não</label>
+                                    </fieldset>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <fieldset>
+                                        <label for="3_3">
+                                            3.3 Há imagens mapeadas? Estão acessíveis?
+                                            <a data-toggle="collapse" href="#3_3_details" role="button" aria-expanded="false" aria-controls="3_3_details" class="collapsed">
+                                                <span class="glyphicon glyphicon-info-sign"></span>
+                                            </a>
+                                            <div class="collapse" id="3_3_details">
+                                                <div class="card card-body">
+                                                    Imagem mapeada, via de regra encapsulada pela tag "map", usada para criar links distintos dentro de uma mesma imagem, é esperado que os elementos links sejam relacionados à imagem.
+                                                </div>
+                                            </div>
+                                        </label>
+                                        <br/>
+                                        <label class="radio-inline"><input type="radio" name="3_3" value="1" checked="">Sim</label>
+                                        <label class="radio-inline"><input type="radio" name="3_3" value="0">Não</label>
+                                    </fieldset>
+                                </div>
+                            
+                                <div class="col-md-6">
+                                    <fieldset>
+                                        <label for="3_4">
+                                            3.4 Há infográficos (ou outros tipos de conteúdo visual complexo)? Estão acessíveis ou com texto equivalente?
+                                            <a data-toggle="collapse" href="#3_4_details" role="button" aria-expanded="false" aria-controls="3_4_details" class="collapsed">
+                                                <span class="glyphicon glyphicon-info-sign"></span>
+                                            </a>
+                                            <div class="collapse" id="3_4_details">
+                                                <div class="card card-body">
+                                                    Nesse caso não necessariamente o código em HTML ligado à imagem tem que conter todas as informações. Se existir um texto no site que explique bem o conteúdo, então está adequado.
+                                                </div>
+                                            </div>
+                                        </label> 
+                                        <br/>
+                                        <label class="radio-inline"><input type="radio" name="3_4" value="1" checked>Sim</label>
+                                        <label class="radio-inline"><input type="radio" name="3_4" value="0">Não</label>
+                                    </fieldset>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="forms_form" class="tab-pane fade">
+                            <h3>4. Preenchimento e navegação em formulários</h3>
+                            <p>
+                                Ao se navegar por formulários, não deve haver barreiras que impeçam que o usuário passe de campo em campo e acione botões. As instruções devem ser claras e os rótulos devem estar relacionados com cada campo. Os softwares leitores de tela devem ler cada campo e relacioná-lo com seu devido rótulo. Usa-se a tecla de atalho “F” para acessar o formulário sem precisar navegar pelos demais conteúdos e elementos da página.
+                            </p>
+                            <br/>
+
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <fieldset>
+                                        <label for="4_1">
+                                            4.1 Os campos de formulário da página possuem um título claro / compreensível?
+                                            <a data-toggle="collapse" href="#4_1_details" role="button" aria-expanded="false" aria-controls="4_1_details" class="collapsed">
+                                                <span class="glyphicon glyphicon-info-sign"></span>
+                                            </a>
+                                            <div class="collapse" id="4_1_details">
+                                                <div class="card card-body">
+                                                    É esperado que todos os formulários tenham um título identificando aquele bloco de campo com formulário, também que esse título esteja relacionado com quem com o objetivo do formulário, por exemplo, “Formulário de Cadastro”, “Questionário Sócio Econômico”.
+                                                </div>
+                                            </div>
+                                        </label>
+                                        <br/>
+                                        <label class="radio-inline"><input type="radio" name="4_1" value="1" checked="">Sim</label>
+                                        <label class="radio-inline"><input type="radio" name="4_1" value="0">Não</label>
+                                    </fieldset>
+                                </div>
+                            
+                                <div class="col-md-6">
+                                    <fieldset>
+                                        <label for="4_2">
+                                            4.2 As informações sobre o preenchimento dos formulários são claras?
+                                            <a data-toggle="collapse" href="#4_2_details" role="button" aria-expanded="false" aria-controls="4_2_details" class="collapsed">
+                                                <span class="glyphicon glyphicon-info-sign"></span>
+                                            </a>
+                                            <div class="collapse" id="4_2_details">
+                                                <div class="card card-body">
+                                                    Às vezes há um asterisco ou algum outro sinal indicando que o campo é obrigatório, porém o ideal seria ter uma descrição que fosse mais clara quando utilizada a ferramenta de leitura.
+                                                </div>
+                                            </div>
+                                        </label> 
+                                        <br/>
+                                        <label class="radio-inline"><input type="radio" name="4_2" value="1" checked>Sim</label>
+                                        <label class="radio-inline"><input type="radio" name="4_2" value="0">Não</label>
+                                    </fieldset>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <fieldset>
+                                        <label for="4_3">
+                                            4.3 Os campos de preenchimento obrigatório estão indicados não apenas por cor diferenciada?
+                                            <a data-toggle="collapse" href="#4_3_details" role="button" aria-expanded="false" aria-controls="4_3_details" class="collapsed">
+                                                <span class="glyphicon glyphicon-info-sign"></span>
+                                            </a>
+                                            <div class="collapse" id="4_3_details">
+                                                <div class="card card-body">
+                                                    Algumas caixas de preenchimento de formulário ficam na cor vermelha indicando obrigatoriedade de preenchimento, o ideal é ter um texto em paralelo à cor indicando a obrigatoriedade do campo ser preenchido.
+                                                </div>
+                                            </div>
+                                        </label>
+                                        <br/>
+                                        <label class="radio-inline"><input type="radio" name="4_3" value="1" checked="">Sim</label>
+                                        <label class="radio-inline"><input type="radio" name="4_3" value="0">Não</label>
+                                    </fieldset>
+                                </div>
+                            
+                                <div class="col-md-6">
+                                    <fieldset>
+                                        <label for="4_4">
+                                            4.4 Há alternativa em texto para os botões de imagem de formulários e ela descreve com clareza a ação que será executada?
+                                            <a data-toggle="collapse" href="#4_4_details" role="button" aria-expanded="false" aria-controls="4_4_details" class="collapsed">
+                                                <span class="glyphicon glyphicon-info-sign"></span>
+                                            </a>
+                                            <div class="collapse" id="4_4_details">
+                                                <div class="card card-body">
+                                                    Um botão de enviar que esteja com a imagem de um avião de papel, por exemplo, um botão “submit”, pode ocorrer de não existir texto indicando a função do botão.
+                                                </div>
+                                            </div>
+                                        </label> 
+                                        <br/>
+                                        <label class="radio-inline"><input type="radio" name="4_4" value="1" checked>Sim</label>
+                                        <label class="radio-inline"><input type="radio" name="4_4" value="0">Não</label>
+                                    </fieldset>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <fieldset>
+                                        <label for="4_5">
+                                            4.5 As etiquetas de texto (labels ou rótulos) estão associadas aos seus campos correspondentes no formulário?
+                                            <a data-toggle="collapse" href="#4_5_details" role="button" aria-expanded="false" aria-controls="4_5_details" class="collapsed">
+                                                <span class="glyphicon glyphicon-info-sign"></span>
+                                            </a>
+                                            <div class="collapse" id="4_5_details">
+                                                <div class="card card-body">
+                                                    Verificar se há um texto que explica de maneira clara o conteúdo que deve ser preenchido no campo.
+                                                </div>
+                                            </div>
+                                        </label>
+                                        <br/>
+                                        <label class="radio-inline"><input type="radio" name="4_5" value="1" checked="">Sim</label>
+                                        <label class="radio-inline"><input type="radio" name="4_5" value="0">Não</label>
+                                    </fieldset>
+                                </div>
+                            
+                                <div class="col-md-6">
+                                    <fieldset>
+                                        <label for="4_6">
+                                            4.6 Os campos dos formulários com informações relacionadas estão agrupados logicamente, e o propósito ou natureza dos agrupamentos está explicitado claramente?
+                                            <a data-toggle="collapse" href="#4_6_details" role="button" aria-expanded="false" aria-controls="4_6_details" class="collapsed">
+                                                <span class="glyphicon glyphicon-info-sign"></span>
+                                            </a>
+                                            <div class="collapse" id="4_6_details">
+                                                <div class="card card-body">
+                                                    Verificar a lógica da sequencia dos campos, por exemplo, quando preenchido um formulário de cadastro espera-se que a ordem dos campos seja algo como “Nome”, “Sobrenome” e “Telefone”, e não “Nome”, “Telefone” e “Sobrenome”.
+                                                </div>
+                                            </div>
+                                        </label> 
+                                        <br/>
+                                        <label class="radio-inline"><input type="radio" name="4_6" value="1" checked>Sim</label>
+                                        <label class="radio-inline"><input type="radio" name="4_6" value="0">Não</label>
+                                    </fieldset>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <fieldset>
+                                        <label for="4_7">
+                                            4.7 Mensagens de erro e avisos são claros? É possível acessá-los facilmente?
+                                            <a data-toggle="collapse" href="#4_7_details" role="button" aria-expanded="false" aria-controls="4_7_details" class="collapsed">
+                                                <span class="glyphicon glyphicon-info-sign"></span>
+                                            </a>
+                                            <div class="collapse" id="4_7_details">
+                                                <div class="card card-body">
+                                                    É esperado que, ao submeter o formulário para validação, caso haja campo obrigatório não preenchido, ou preenchido de forma errada, o usuário receba uma mensagem informando quais campos precisam ser preenchidos e/ou corrigidos.
+                                                </div>
+                                            </div>
+                                        </label>
+                                        <br/>
+                                        <label class="radio-inline"><input type="radio" name="4_7" value="1" checked="">Sim</label>
+                                        <label class="radio-inline"><input type="radio" name="4_7" value="0">Não</label>
+                                    </fieldset>
+                                </div>
+                            
+                                <div class="col-md-6">
+                                    <fieldset>
+                                        <label for="4_8">
+                                            4.8 Quando ocorre erro ou engano em alguma digitação, é possível corrigi-lo?
+                                            <a data-toggle="collapse" href="#4_8_details" role="button" aria-expanded="false" aria-controls="4_8_details" class="collapsed">
+                                                <span class="glyphicon glyphicon-info-sign"></span>
+                                            </a>
+                                            <div class="collapse" id="4_8_details">
+                                                <div class="card card-body">
+                                                    O leitor de telas informa com áudio característico quando ocorre erro de digitação. Além disso, alguns campos de formulário realizam validação durante o preenchimento do campo e, quando é o caso de ocorrer erro de preenchimento do campo é esperado que o usuário seja informado da necessidade de corrigir o campo;
+                                                </div>
+                                            </div>
+                                        </label> 
+                                        <br/>
+                                        <label class="radio-inline"><input type="radio" name="4_8" value="1" checked>Sim</label>
+                                        <label class="radio-inline"><input type="radio" name="4_8" value="0">Não</label>
+                                    </fieldset>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <fieldset>
+                                        <label for="4_9">
+                                            4.9 Quando houver anti-spam para liberação de envio dos dados (captcha), estes itens estão disponíveis também em áudio e texto?
+                                            <a data-toggle="collapse" href="#4_9_details" role="button" aria-expanded="false" aria-controls="4_9_details" class="collapsed">
+                                                <span class="glyphicon glyphicon-info-sign"></span>
+                                            </a>
+                                            <div class="collapse" id="4_9_details">
+                                                <div class="card card-body">
+                                                    São os artifícios para verificar se o usuário não é um robô; verificar também se a opção de áudio é acessível por teclado.
+                                                </div>
+                                            </div>
+                                        </label>
+                                        <br/>
+                                        <label class="radio-inline"><input type="radio" name="4_9" value="1" checked="">Sim</label>
+                                        <label class="radio-inline"><input type="radio" name="4_9" value="0">Não</label>
+                                    </fieldset>
+                                </div>
+                            
+                                <div class="col-md-6">
+                                    <fieldset>
+                                        <label for="4_10">
+                                            4.10 Os estados dos botões (desabilitado, mouse over, etc.) são indicados de forma clara e acessível?
+                                            <a data-toggle="collapse" href="#4_10_details" role="button" aria-expanded="false" aria-controls="4_10_details" class="collapsed">
+                                                <span class="glyphicon glyphicon-info-sign"></span>
+                                            </a>
+                                            <div class="collapse" id="4_10_details">
+                                                <div class="card card-body">
+                                                    O botão de submissão do formulário permanece desativado enquanto os campos obrigatórios não são preenchidos corretamente. Essa desativação pode ser de não permitir que o botão seja clicado, se quer selecionado. Pode ser também que o botão esteja passível de ser selecionado, porém, quando clicado, que o usuário receba informação de que é necessário preencher os campos obrigatórios, ou preencher corretamente algum campo errado.
+                                                </div>
+                                            </div>
+                                        </label> 
+                                        <br/>
+                                        <label class="radio-inline"><input type="radio" name="4_10" value="1" checked>Sim</label>
+                                        <label class="radio-inline"><input type="radio" name="4_10" value="0">Não</label>
+                                    </fieldset>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="elements_form" class="tab-pane fade">
+                            <h3>5. Tamanho e relacionamento de elementos</h3>
+                            <p>
+                                Verificação de problemas em relação ao tamanho dos elementos presentes no sítio ou portal eletrônico. Elementos muito pequenos podem prejudicar o uso para muitas pessoas.
+                            </p>
+                            <p>
+                                Utilize o Google Chrome, e a extensão "NoCoffee Vision Simulator", opção "Flutter (nystagmus)" definida em 100, para dificultar a interação com os elementos presentes na página e movimente o cursor sobre os menores links e elementos da página durante o teste.
+                            </p>
+                            <br/>
+
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <fieldset>
+                                        <label for="5_1">
+                                            5.1 É fácil clicar nos elementos da página?
+                                            <a data-toggle="collapse" href="#5_1_details" role="button" aria-expanded="false" aria-controls="5_1_details" class="collapsed">
+                                                <span class="glyphicon glyphicon-info-sign"></span>
+                                            </a>
+                                            <div class="collapse" id="5_1_details">
+                                                <div class="card card-body">
+                                                    Deve ser levado em conta a dificuldade introduzida pela extensão “NoCoffee”, com a opção Flutter(nystagmus) em 100. Arraste o cursor com o “mouse” sobre os elementos, links e botões. O cursor estando sobre esses elemento e não estar selecionando, é sinal de reprovação do item.
+                                                </div>
+                                            </div>
+                                        </label>
+                                        <br/>
+                                        <label class="radio-inline"><input type="radio" name="5_1" value="1" checked="">Sim</label>
+                                        <label class="radio-inline"><input type="radio" name="5_1" value="0">Não</label>
+                                    </fieldset>
+                                </div>
+                            
+                                <div class="col-md-6">
+                                    <fieldset>
+                                        <label for="5_2">
+                                            5.2 É possível aumentar e diminuir o tamanho das fontes do sítio ou portal através do browser sem que o conteúdo ou a funcionalidade sejam perdidos ou prejudicados? A técnica de “design responsivo” deve ser considerada para que o sítio ou portal se adapte ao tamanho da tela quando o usuário aumentar o tamanho das páginas (utilizando CTRL/COMMAND + para aumentar e CTRL/COMMAND - para diminuir)?
+                                            <a data-toggle="collapse" href="#5_2_details" role="button" aria-expanded="false" aria-controls="5_2_details" class="collapsed">
+                                                <span class="glyphicon glyphicon-info-sign"></span>
+                                            </a>
+                                            <div class="collapse" id="5_2_details">
+                                                <div class="card card-body">
+                                                    Neste item deve-se, principalmente, prestar atenção ao tamanho das fontes. Se por algum motivo não for possível ler o conteúdo (um menu passa a tomar toda a tela, o texto saí da área de leitura não podendo ser visualizado nem com barra de rolagem, textos sobrepondo uns aos outros, etc.) o item será reprovado.
+                                                </div>
+                                            </div>
+                                        </label> 
+                                        <br/>
+                                        <label class="radio-inline"><input type="radio" name="5_2" value="1" checked>Sim</label>
+                                        <label class="radio-inline"><input type="radio" name="5_2" value="0">Não</label>
+                                    </fieldset>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <fieldset>
+                                        <label for="5_3">
+                                            5.3 O sítio ou portal se adapta adequadamente com zoom de 200%, exibindo as informações importantes e funcionalidades sem barras laterais de rolagem?
+                                            <a data-toggle="collapse" href="#5_3_details" role="button" aria-expanded="false" aria-controls="5_3_details" class="collapsed">
+                                                <span class="glyphicon glyphicon-info-sign"></span>
+                                            </a>
+                                            <div class="collapse" id="5_3_details">
+                                                <div class="card card-body">
+                                                    O conteúdo deve se reposicionar automaticamente para permitir ser visualizado totalmente. Menus podem atrapalhar nessa parte do teste, por isso é importante testar e prestar atenção nas mudanças que ocorrem dependendo do navegador utilizado (nem sempre o conteúdo é exibido da mesma forma).
+                                                </div>
+                                            </div>
+                                        </label>
+                                        <br/>
+                                        <label class="radio-inline"><input type="radio" name="5_3" value="1" checked="">Sim</label>
+                                        <label class="radio-inline"><input type="radio" name="5_3" value="0">Não</label>
+                                    </fieldset>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="texts_form" class="tab-pane fade">
+                            <h3>6. Conteúdo textual</h3>
+                            <br/>
+
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <fieldset>
+                                        <label for="6_1">
+                                            6.1 Os textos contidos na página são de fácil compreensão e, para os textos de conhecimento mais avançados, estão disponibilizadas informações suplementares que expliquem ou ilustrem o conteúdo principal?
+                                            <a data-toggle="collapse" href="#6_1_details" role="button" aria-expanded="false" aria-controls="6_1_details" class="collapsed">
+                                                <span class="glyphicon glyphicon-info-sign"></span>
+                                            </a>
+                                            <div class="collapse" id="6_1_details">
+                                                <div class="card card-body">
+                                                    Os textos mais complexos (com termos técnicos ou sobre assuntos bem específicos) podem conter imagens ou mesmo explicações sobre os termos utilizados. Se for o caso, e se isso ajudar a elucidar o conteúdo tornando a leitura fácil, o item está aprovado.
+                                                </div>
+                                            </div>
+                                        </label>
+                                        <br/>
+                                        <label class="radio-inline"><input type="radio" name="6_1" value="1" checked="">Sim</label>
+                                        <label class="radio-inline"><input type="radio" name="6_1" value="0">Não</label>
+                                    </fieldset>
+                                </div>
+                            
+                                <div class="col-md-6">
+                                    <fieldset>
+                                        <label for="6_2">
+                                            6.2 Na primeira ocorrência de siglas, abreviaturas ou palavras incomuns (ambíguas, desconhecidas ou utilizadas de forma muito específica), está disponibilizada sua explicação ou forma completa?
+                                            <a data-toggle="collapse" href="#6_2_details" role="button" aria-expanded="false" aria-controls="6_2_details" class="collapsed">
+                                                <span class="glyphicon glyphicon-info-sign"></span>
+                                            </a>
+                                            <div class="collapse" id="6_2_details">
+                                                <div class="card card-body">
+                                                    Palavras que expressem um sentido específico também deve ser explicada (por exemplo, “Hunting” significa “caçar”, porém pode ser usado em determinada frase ou especificação como tendo outro sentido).
+                                                </div>
+                                            </div>
+                                        </label> 
+                                        <br/>
+                                        <label class="radio-inline"><input type="radio" name="6_2" value="1" checked>Sim</label>
+                                        <label class="radio-inline"><input type="radio" name="6_2" value="0">Não</label>
+                                    </fieldset>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <fieldset>
+                                        <label for="6_3">
+                                            6.3 Os textos contidos na página possuem alinhamento consistente entre diferentes seções, preferencialmente alinhados à esquerda?
+                                            <a data-toggle="collapse" href="#6_3_details" role="button" aria-expanded="false" aria-controls="6_3_details" class="collapsed">
+                                                <span class="glyphicon glyphicon-info-sign"></span>
+                                            </a>
+                                            <div class="collapse" id="6_3_details">
+                                                <div class="card card-body">
+                                                    Pode estar alinhado de outra forma, desde que apresente harmonia com o conteúdo geral da página e não torne a experiência do usuário ruim durante a leitura. É preferível que os texto estejam alinhados à esquerda.
+                                                </div>
+                                            </div>
+                                        </label>
+                                        <br/>
+                                        <label class="radio-inline"><input type="radio" name="6_3" value="1" checked="">Sim</label>
+                                        <label class="radio-inline"><input type="radio" name="6_3" value="0">Não</label>
+                                    </fieldset>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="videos_form" class="tab-pane fade">
+                            <h3>7. Legendas, transcrições e audiodescrição</h3>
+                            <p>
+                                Nota: Recomenda-se aderência aos itens abaixo, porém não obrigatoriamente.
+                            </p>
+                            <p>
+                                Conteúdos em vídeo ou áudio devem ter alternativas textuais e em Língua de Sinais presentes na página. O usuário deve compreender o sentido das imagens em movimento e seus sons. Para conteúdos em vídeo com áudio (audiovisual), é necessária a inserção de legendas ou Closed Caption e da janela de Libras. Já para conteúdos informacionais sonoros (exemplo: arquivo MP3), deve haver uma transcrição em texto.
+                            </p>
+                            <br/>
+
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <fieldset>
+                                        <label for="7_1">
+                                            7.1 Todos os vídeos ou áudios possuem alternativa em texto?
+                                            <a data-toggle="collapse" href="#7_1_details" role="button" aria-expanded="false" aria-controls="7_1_details" class="collapsed">
+                                                <span class="glyphicon glyphicon-info-sign"></span>
+                                            </a>
+                                            <div class="collapse" id="7_1_details">
+                                                <div class="card card-body">
+                                                    As plataforma de vídeo na web, por exemplo o YouTube, contém funções como gerador de legenda automática. Caso não tenha é necessário que exista o texto alternativo descrevendo as falas do vídeo. Quando o elemento é áudio, ou deve conter texto seguido do elemento do áudio, ou deve conter um link direcionando o usuário a outra página, ou modal, com o texto descritivo do áudio.
+                                                </div>
+                                            </div>
+                                        </label>
+                                        <br/>
+                                        <label class="radio-inline"><input type="radio" name="7_1" value="1" checked="">Sim</label>
+                                        <label class="radio-inline"><input type="radio" name="7_1" value="0">Não</label>
+                                    </fieldset>
+                                </div>
+                            
+                                <div class="col-md-6">
+                                    <fieldset>
+                                        <label for="7_2">
+                                            7.2 A alternativa textual possui o mesmo conteúdo que está sendo apresentado pelo vídeo ou pelo áudio?
+                                            <a data-toggle="collapse" href="#7_2_details" role="button" aria-expanded="false" aria-controls="7_2_details" class="collapsed">
+                                                <span class="glyphicon glyphicon-info-sign"></span>
+                                            </a>
+                                            <div class="collapse" id="7_2_details">
+                                                <div class="card card-body">
+                                                    Não precisa ser exatamente igual, porém deve expressar a mesma ideia (por exemplo, seria aceitável se no vídeo for dito “eu gosto de comer biscoito” e no texto estiver escrito “Eu amo comer biscoito”).
+                                                </div>
+                                            </div>
+                                        </label> 
+                                        <br/>
+                                        <label class="radio-inline"><input type="radio" name="7_2" value="1" checked>Sim</label>
+                                        <label class="radio-inline"><input type="radio" name="7_2" value="0">Não</label>
+                                    </fieldset>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <fieldset>
+                                        <label for="7_3">
+                                            7.3 Existe tradução para Libras em todo conteúdo de áudio, vídeo e texto?
+                                            <a data-toggle="collapse" href="#7_3_details" role="button" aria-expanded="false" aria-controls="7_3_details" class="collapsed">
+                                                <span class="glyphicon glyphicon-info-sign"></span>
+                                            </a>
+                                            <div class="collapse" id="7_3_details">
+                                                <div class="card card-body">
+                                                    Verificar se no vídeo aparece o tradutor de libra ou se algum programa específico (disponível na página) consegue traduzir o conteúdo.
+                                                </div>
+                                            </div>
+                                        </label>
+                                        <br/>
+                                        <label class="radio-inline"><input type="radio" name="7_3" value="1" checked="">Sim</label>
+                                        <label class="radio-inline"><input type="radio" name="7_3" value="0">Não</label>
+                                    </fieldset>
+                                </div>
+                            
+                                <div class="col-md-6">
+                                    <fieldset>
+                                        <label for="7_4">
+                                            7.4 Existe audiodescrição em todos os vídeos? Para conteúdos informacionais apenas no formato vídeo, é necessário que exista audiodescrição. Ela é responsável por informar os eventos, acontecimentos e outras informações visuais em forma de áudio.
+                                            <a data-toggle="collapse" href="#7_4_details" role="button" aria-expanded="false" aria-controls="7_4_details" class="collapsed">
+                                                <span class="glyphicon glyphicon-info-sign"></span>
+                                            </a>
+                                            <div class="collapse" id="7_4_details">
+                                                <div class="card card-body">
+                                                    Nesse caso são vídeos onde as imagens são parte importante para a interpretação do conteúdo (duas pessoas sentadas discutindo não gera necessidade de descrição, porém uma animação onde o protagonista só interage com o ambiente sem apresentar monólogos ou sem conversar com outros personagens, necessita de descrição).
+                                                </div>
+                                            </div>
+                                        </label> 
+                                        <br/>
+                                        <label class="radio-inline"><input type="radio" name="7_4" value="1" checked>Sim</label>
+                                        <label class="radio-inline"><input type="radio" name="7_4" value="0">Não</label>
+                                    </fieldset>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <fieldset>
+                                        <label for="7_5">
+                                            7.5 Há mecanismo para ativar, parar, pausar, silenciar ou ajustar o volume de qualquer som que se reproduza na página?
+                                            <a data-toggle="collapse" href="#7_5_details" role="button" aria-expanded="false" aria-controls="7_5_details" class="collapsed">
+                                                <span class="glyphicon glyphicon-info-sign"></span>
+                                            </a>
+                                            <div class="collapse" id="7_5_details">
+                                                <div class="card card-body">
+                                                    O mecanismo em questão deve ser um elemento da página, não podendo ser o ajuste de áudio do computador do usuário.
+                                                </div>
+                                            </div>
+                                        </label>
+                                        <br/>
+                                        <label class="radio-inline"><input type="radio" name="7_5" value="1" checked="">Sim</label>
+                                        <label class="radio-inline"><input type="radio" name="7_5" value="0">Não</label>
+                                    </fieldset>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="final_form" class="tab-pane fade">
+                            <h3>Finalizar e salvar avaliação</h3>
+                            <p>
+                                <b>Versão do checklist manual:</b> <br/>PORTARIA Nº 28/SMPED-GAB/2019
+                            </p>
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <label for="browser">Navegador verificado:</label>
+                                    <input type="text" name="browser" maxlength="60" class="form-control" id="browser" placeholder="" value="Google Chrome" required>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <label for="screen_reader">Leitor de tela utilizado:</label>
+                                    <input type="text" name="screen_reader" maxlength="60" class="form-control" id="screen_reader" placeholder="" value="NVDA 2019.1" required>
+                                </div>
+                            </div>
+
+                            <button class="btn btn-primary" type="submit">Salvar</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <footer id=" footer ">
+        <div class="footer-copyright hidden-xs ">
+            <div class="container ">
+                <div class="row ">
+                    <div class="col-md-12 text-left ">&copy; COPYRIGHT 2019, Uma parceria da Universidade de São Paulo com a Prefeitura Municipal de S&atilde;o Paulo Viaduto do Cha, 15 - Centro - CEP: 01002-020
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js "></script>
+    <script src="https://www.prefeitura.sp.gov.br/cidade/js/bootstrap-3.3.7.min.js "></script>
+    <script src="https://www.prefeitura.sp.gov.br/cidade/js/main.19.4.29.193724-min.js "></script>
+</body>
+
+</html>
